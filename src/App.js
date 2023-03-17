@@ -22,28 +22,22 @@ function App() {
     fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         setForecast({ label: searchData.label, ...json });
       })
       .catch((err) => console.log(err));
   }
 
-  function changeBackground(data) {
-    const city = data.label.split(",")[0];
-    console.log(containerRef);
-    // containerRef.current.style.backgroundImage = `url("https://source.unsplash.com/1920x1080/?${city}"), url("https://source.unsplash.com/1920x1080/?landscape")`;
-  }
-
   return (
     <div className="container" ref={containerRef}>
       <img src={backgroundImg} className="background-img" alt="Background" />
+
+      <Search onSearchChange={handleOnSearchChange} />
+      {currentWeather && <CurrentWeather {...currentWeather} />}
+      {forecast && <Forecast data={forecast} />}
+
       <p className="attribute-img">
         Photo by <a href="https://unsplash.com/@lucamicheli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Micheli</a> on <a href="https://unsplash.com/photos/ruWkmt3nU58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </p>
-
-      <Search onSearchChange={handleOnSearchChange} changeBackground={changeBackground} />
-      {currentWeather && <CurrentWeather {...currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
     </div>
   );
 }

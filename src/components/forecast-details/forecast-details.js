@@ -18,35 +18,37 @@ function ForecastDetails({ miniList }) {
     }
 
     return (
-      <div key={v4()} className="specs">
-        <div className="specs-elem">{time}</div>
-        <div className="img-container">
-          <img src={`icons/${elem.weather[0].icon}.png`} alt="weather-img" className="specs-img" />
-        </div>
-        <div className="specs-elem">{temperature}</div>
-        <div className="specs-elem">{Math.round(elem.wind.speed)}</div>
-        <div className="specs-elem">{precipitationPresence()}</div>
-        <div className="specs-elem">{precipitationProbability}</div>
-        <div className="specs-elem">{Math.round(elem.main.feels_like)}</div>
-        <div className="specs-elem">{elem.main.humidity}</div>
-      </div>
+      <tr key={v4()} className="specs">
+        <td className="specs-elem">{time}</td>
+        <td className="img-container">
+          <img src={`icons/${elem.weather[0].icon}.png`} className="specs-img" alt="weather-img" />
+        </td>
+        <td className="specs-elem">{temperature}</td>
+        <td className="specs-elem">{Math.round(elem.wind.speed)}</td>
+        <td className="specs-elem">{precipitationPresence()}</td>
+        <td className="specs-elem">{precipitationProbability}</td>
+        <td className="specs-elem">{Math.round(elem.main.feels_like)}</td>
+        <td className="specs-elem">{elem.main.humidity}</td>
+      </tr>
     );
   });
 
   return (
-    <div className="details-container">
-      <div className="titles">
-        <div className="titles-elem">Time</div>
-        <div className="titles-elem">Weather</div>
-        <div className="titles-elem">T (°C)</div>
-        <div className="titles-elem">Wind (km/h)</div>
-        <div className="titles-elem">Precipitation (mm)</div>
-        <div className="titles-elem">Precipitation (%)</div>
-        <div className="titles-elem">Feels like(°C)</div>
-        <div className="titles-elem">Humidity (%)</div>
-      </div>
-      {details}
-    </div>
+    <table className="details-container">
+      <thead className="titles">
+        <tr>
+          <th className="titles-elem">Time</th>
+          <th className="titles-elem">Weather</th>
+          <th className="titles-elem">T (°C)</th>
+          <th className="titles-elem">Wind (km/h)</th>
+          <th className="titles-elem">Precipitation (mm)</th>
+          <th className="titles-elem">Precipitation (%)</th>
+          <th className="titles-elem">Feels like(°C)</th>
+          <th className="titles-elem">Humidity (%)</th>
+        </tr>
+      </thead>
+      <tbody>{details}</tbody>
+    </table>
   );
 }
 

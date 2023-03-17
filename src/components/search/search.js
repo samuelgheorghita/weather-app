@@ -25,7 +25,6 @@ function Search({ onSearchChange, changeBackground }) {
   function handleOnChange(searchData) {
     setSearch(searchData);
     onSearchChange(searchData);
-    changeBackground(searchData);
   }
 
   return (

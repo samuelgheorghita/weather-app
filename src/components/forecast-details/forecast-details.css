@@ -1,14 +1,14 @@
 @import "../../constants.css";
 
 .details-container{
+    width: 100%;
     background-color: var(--background-color-grey-1-opacity-1);
     margin: 0 0 10px 0;
     padding: 0;
     position: relative;
     text-align: center;
-    /* font-size:  */
-    /* font-size: clamp(9px, 1.2vw, 0.95rem); */
     font-size: 14px;
+    padding: 10px 2.5% 10px 2.5%;
 }
 
 .details-container::before{
@@ -21,33 +21,25 @@
     left: 2.5%;
 }
 
-.specs-elem{
-    padding-bottom: 15px;
-}
 
 .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .specs-img{
-    width: 20%
+    width: min(30%, 40px)
 }
 
-.titles, .specs{
-    display: grid;
-    grid-template-columns: 1fr 0.8fr 1fr 1fr 1.5fr 1.5fr 1fr 1fr;
-    column-gap: 3px;
+
+tbody{
+    font-weight: 600;
 }
 
-.titles{
-    margin-bottom: 10px;
-    word-spacing: -3px;
-}
 
-.titles-elem:nth-child(7){
-    word-spacing: normal;
-}
 
-@media (max-width: 700px){
+@media (max-width: 550px){
 
 
     .titles-elem:nth-child(2){
@@ -59,7 +51,7 @@
     }
     .titles-elem:nth-child(3)::after{
         content: 'T (°C)';
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .titles-elem:nth-child(4){
@@ -67,7 +59,7 @@
     }
     .titles-elem:nth-child(4)::after{
         content: 'Wind';
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .titles-elem:nth-child(5){
@@ -75,7 +67,7 @@
     }
     .titles-elem:nth-child(5)::after{
         content: 'Prec.(mm)';
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .titles-elem:nth-child(6){
@@ -83,7 +75,7 @@
     }
     .titles-elem:nth-child(6)::after{
         content: 'Prec.(%)';
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .titles-elem:nth-child(8){
@@ -91,6 +83,14 @@
     }
     .titles-elem:nth-child(8)::after{
         content: 'Hum.(%)';
-        font-size: 8px;
+        font-size: 14px;
+    }
+
+    .specs-img {
+        width: 20px;
+    }
+
+    .details-container {
+        padding: 10px 0;
     }
 }

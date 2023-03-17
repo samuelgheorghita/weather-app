@@ -44,14 +44,11 @@ function Forecast({ data }) {
         currObj.icon = objIcon;
         currObj.description = description;
       }
-      // If no icon is set(if no precipitation), then set it to the icon at time 12am (mezzogiorno), index 4 of the data list
+      // If no icon is set(if no precipitation), then set it to the icon at time 12:00, index 4 of the data list
       // Also setting the description, in order to match the icon
       // next line i'm setting some kind of default value
-      // TODO!!!! Work on the icons
-      //   if (i === 0) {
-      //     currObj.icon = objIcon;
-      //     currObj.description = description;
-      //   }
+      // TODO: Improve the icons shown
+
       if (!currObj.icon && (i + indexNextDay + 4) % 8 === 0) {
         currObj.icon = objIcon;
         currObj.description = description;

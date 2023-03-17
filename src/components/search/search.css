@@ -6,4 +6,11 @@
     margin: 0 auto;
     background-color: transparent;
     opacity: 0.85;
+    font-size: 14px;
+}
+
+@media (max-width: 550px){
+    .search{
+        width: 95%;
+    }
 }
