@@ -1,0 +1,63 @@
+.current-weather{
+    background: rgb(51, 51, 51);
+    color: white;
+    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.location-icon-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.location{
+    padding: 25px 0 0 18px;
+}
+
+.city{
+    font-size: 26px;
+}
+
+
+
+.img-container{
+    border-radius: 0 8px 0 0;
+    -webkit-border-radius: 0 8px 0 0;
+    -moz-border-radius: 0 8px 0 0;
+    -ms-border-radius: 0 8px 0 0;
+    -o-border-radius: 0 8px 0 0;
+}
+
+.temperature-details-container{
+    padding: 10px 25px 25px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temperature{
+    font-size: min(70px, 15vw);
+    font-weight: 700;
+}
+
+.details{
+    width: 48%
+}
+
+.parameter-row{
+    line-height: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parameter-value{
+    text-align: end;
+}

@@ -1,0 +1,89 @@
+@import "../../constants.css";
+
+.details-container{
+    background-color: var(--background-color-grey-1-opacity-1);
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    /* font-size:  */
+    font-size: clamp(9px, 1.2vw, 0.95rem);
+}
+
+.details-container::before{
+    content:'';
+    background-color: black;
+    position: absolute;
+    width: 95%;
+    height: 2px;
+    bottom: 100%;
+    left: 2.5%;
+}
+
+.specs-elem{
+    padding-bottom: 15px;
+}
+
+.img-container{
+}
+
+.specs-img{
+    width: 20%
+}
+
+.titles, .specs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr 1.5fr 1fr 1fr;
+}
+
+.titles{
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px){
+
+
+    .titles-elem:nth-child(2){
+        font-size: 0px;
+    }
+
+    .titles-elem:nth-child(3){
+        font-size: 0px;
+    }
+    .titles-elem:nth-child(3)::after{
+        content: 'T (°C)';
+        font-size: 8px;
+    }
+
+    .titles-elem:nth-child(4){
+        font-size: 0px;
+    }
+    .titles-elem:nth-child(4)::after{
+        content: 'Wind';
+        font-size: 8px;
+    }
+
+    .titles-elem:nth-child(5){
+        font-size: 0px;
+    }
+    .titles-elem:nth-child(5)::after{
+        content: 'Prec.(mm)';
+        font-size: 8px;
+    }
+
+    .titles-elem:nth-child(6){
+        font-size: 0px;
+    }
+    .titles-elem:nth-child(6)::after{
+        content: 'Prec.(%)';
+        font-size: 8px;
+    }
+
+    .titles-elem:nth-child(8){
+        font-size: 0px;
+    }
+    .titles-elem:nth-child(8)::after{
+        content: 'Hum.(%)';
+        font-size: 8px;
+    }
+}

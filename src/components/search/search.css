@@ -1,0 +1,9 @@
+@import '../../constants.css';
+
+.search{
+    width: 80%;
+    padding-top: 20px;
+    margin: 0 auto;
+    background-color: transparent;
+    opacity: 0.85;
+}
