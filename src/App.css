@@ -30,10 +30,11 @@
 .attribute-img{
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  right: 10px;
   color: white;
   background-color: hsla(0, 0%, 0%, 0.7);
   padding: 5px;
+  font-size: 13.5px;
 }
 
 .attribute-img a {

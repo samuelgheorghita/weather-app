@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500;700&display=swap');
 
 .forecast{
-    width: max(80%, 300px);
+    width: min(90%, 1200px);
     margin: 20px auto 0 auto;
     font-size: 25px;
-    font-size: clamp(9px, 1.2vw, 0.95rem);
+    /* font-size: clamp(9px, 1.2vw, 0.95rem); */
+    font-size: clamp(0.938rem, 0.719rem + 0.5vw, 1.031rem);
+    /* font-size: 17px; */
     font-weight: 700;
     font-family: 'Noto Serif HK', serif;
     padding-bottom: 70px;
@@ -13,8 +15,9 @@
 .daily-item{
     background-color: grey;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
+    grid-template-columns: auto 50px 1fr 1fr auto;
+    align-items: center;
+    column-gap: 10px;
     padding: 10px 30px;
     margin: 10px 0 0 0;
     background-color: var(--background-color-grey-1-opacity-1);
@@ -23,23 +26,23 @@
 
 
 
-.left-part-btn{
+/* .left-part-btn{
     display: grid;
     font-weight: 700;
     letter-spacing: 1.1px;
     text-align: left;
     grid-template-columns: 1fr 4fr;
-}
+} */
 
 .grid-elem{
     display: flex;
     align-items: center;
 }
 
-.right-part-btn{
+/* .right-part-btn{
     display: grid;
     grid-template-columns: 4fr 1fr;
-}
+} */
 
 .img-div{
     max-width: 50px;
@@ -48,25 +51,38 @@
 }
 
 
-img{
+.img-div img{
     width: 100%;
     margin: 0 auto;
 }
 
 .day-of-week{
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    grid-column-start: 3;
 }
 
 
+.desc{
+}
 
 .min-max{
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 
 
 @media (max-width:700px){
+    .forecast{
+        width: 95%;
+    }
+
     .daily-item{
         padding: 10px;
+        font-size: 13px;
+        grid-template-columns: auto 1fr 1fr auto;
+    }
+
+    .day-of-week{
+        grid-column-start: auto;
     }
     
 

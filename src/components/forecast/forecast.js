@@ -79,17 +79,13 @@ function Forecast({ data }) {
         <AccordionItemHeading>
           <AccordionItemButton>
             <div className="daily-item">
-              <div className="left-part-btn">
-                <div className="img-div grid-elem">
-                  <img src={`icons/${header.icon}.png`} alt="weather-img" />
-                </div>
-                <div className="day-of-week grid-elem">{header.dayWeek}</div>
+              <div className="img-div grid-elem">
+                <img src={`icons/${header.icon}.png`} alt="weather-img" />
               </div>
-              <div className="right-part-btn">
-                <div className="desc grid-elem">{header.description}</div>
-                <div className="min-max grid-elem">
-                  {Math.floor(header.min)}/{Math.floor(header.max)}
-                </div>
+              <div className="day-of-week grid-elem">{header.dayWeek}</div>
+              <div className="desc grid-elem">{header.description}</div>
+              <div className="min-max grid-elem">
+                {Math.floor(header.min)}/{Math.floor(header.max)}
               </div>
             </div>
           </AccordionItemButton>
