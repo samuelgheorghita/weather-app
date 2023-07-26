@@ -5,11 +5,10 @@ import ForecastDetails from "../forecast-details/forecast-details";
 
 function Forecast({ data }) {
   const { list } = data;
-  const itemsArray = [];
-  const detailsArray = [];
   const DAYS_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const indexNextDay = list.findIndex((elem) => elem.dt_txt.includes("00:00:00"));
   const myData = [];
+  console.log(list);
 
   const today = new Date().getDay() + 1;
   const daysFromToday = DAYS_OF_WEEK.slice(today, DAYS_OF_WEEK.length).concat(DAYS_OF_WEEK.slice(0, today));
@@ -39,16 +38,16 @@ function Forecast({ data }) {
       }
 
       // **** Setting ICON, this does not cover the 1st day. It could remain undefined the value of the first icon
-      // **** Here i'm setting also the description, to match the icon
+      // **** Here i'm setting also the description, to match the icon (in case of precipitation, for icons whose name are higher than 09)
       if (regex.test(objIcon)) {
         currObj.icon = objIcon;
         currObj.description = description;
       }
+
       // If no icon is set(if no precipitation), then set it to the icon at time 12:00, index 4 of the data list
       // Also setting the description, in order to match the icon
       // next line i'm setting some kind of default value
       // TODO: Improve the icons shown
-
       if (!currObj.icon && (i + indexNextDay + 4) % 8 === 0) {
         currObj.icon = objIcon;
         currObj.description = description;
@@ -65,8 +64,14 @@ function Forecast({ data }) {
     }
   }
   preparingData();
+  if (!myData[0].icon) {
+    myData[0].icon = list[0].weather[0].icon;
+    myData[0].description = list[0].weather[0].description;
+  }
 
-  const toChangeName = myData.map((header, index) => {
+  console.log(myData);
+
+  const accordionElem = myData.map((header, index) => {
     let miniList = list.slice(indexNextDay + 8 * (index - 1), indexNextDay + 8 * index);
     if (index === 0) {
       miniList = list.slice(0, indexNextDay);
@@ -96,7 +101,7 @@ function Forecast({ data }) {
 
   return (
     <div className="forecast">
-      <Accordion allowZeroExpanded>{toChangeName}</Accordion>
+      <Accordion allowZeroExpanded>{accordionElem}</Accordion>
     </div>
   );
 }

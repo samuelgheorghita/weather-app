@@ -4,7 +4,7 @@ import Search from "./components/search/search";
 import Forecast from "./components/forecast/forecast";
 import CurrentWeather from "./components/current-weather/current-weather";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
-import backgroundImg from "./images/mount-l.jpg";
+import backgroundImg from "./images/mountain-dark.jpg";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -36,7 +36,8 @@ function App() {
       {forecast && <Forecast data={forecast} />}
 
       <p className="attribute-img">
-        Photo by <a href="https://unsplash.com/@lucamicheli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Micheli</a> on <a href="https://unsplash.com/photos/ruWkmt3nU58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        {/* Photo by <a href="https://unsplash.com/@lucamicheli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Micheli</a> on <a href="https://unsplash.com/photos/ruWkmt3nU58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
+        Photo by <a href="https://www.pexels.com/@eberhardgross/">Eberhard Grossgasteiger</a> on <a href="https://www.pexels.com/">Pexels</a>
       </p>
     </div>
   );

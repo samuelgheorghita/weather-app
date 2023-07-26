@@ -1,7 +1,7 @@
 @import '../../constants.css';
 
 .search{
-    width: 80%;
+    width: min(90%, 1200px);
     padding-top: 20px;
     margin: 0 auto;
     background-color: transparent;
@@ -9,7 +9,7 @@
     font-size: 14px;
 }
 
-@media (max-width: 550px){
+@media (max-width: 700px){
     .search{
         width: 95%;
     }
